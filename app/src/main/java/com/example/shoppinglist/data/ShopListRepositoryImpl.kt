@@ -10,6 +10,14 @@ object ShopListRepositoryImpl : ShopListRepository {
 
     private var autoIncrementId = 0
 
+
+    init{
+     for (i in 0 until 10){
+         val item = shopItem("Name $i", i, true)
+         addShopList(item)
+     }
+    }
+
     override fun addShopList(ShopItem: shopItem) {
         if (ShopItem.id == shopItem.Undefined_ID) {
             ShopItem.id = autoIncrementId++
